@@ -441,6 +441,9 @@ section{
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
 }
+.about-me{
+    margin-top: 50px;
+}
 .about-info figcaption{
     width: 100%;
     padding: 35px;
@@ -463,6 +466,7 @@ section{
 .about-me p{
     margin-top: 10px;
     color: var(--text-color);
+    width: 270px;
 }
 .about-me-btn{
     text-decoration: none;
@@ -715,6 +719,15 @@ footer{
 
 }
 @media only screen and (max-width:900px){
+    .uy{
+        width: 200px;
+    }
+    .featured-image{
+        margin-top: 30%;
+    }
+    .about{
+        margin-top: 0px;
+     }
     .nav-menu-btn{
         display: none;
     }
@@ -804,6 +817,9 @@ footer{
     }
 }
 @media only screen and (max-width:540px){
+    .about{
+        margin-top: 0px;
+     }
     .featured-name{
         font-size: 40px;
     }
