@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="header">
+            <div class="nav-logo">
+                <p class="nav-name">Abdullahi</p>
+            </div>
+            <div class="nav-menu" id="myNavMenu">
+                 <ul class="nav_menu_list" id="menu">
+                    <li class="nav_list">
+                        <a href="#home" class="nav-link active-link">Home</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#skills" class="nav-link">Skills</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#project" class="nav-link">Project</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <div class="circle"></div>
+                    </li>
+                 </ul>
+            </div>
+            <div class="mode">
+                <div class="moon-sun" id="toggle-switch">
+                  <i class="fa fa-moon" id="moon"></i>
+                  <i class="fa fa-sun" id="sun"></i>
+                </div>
+            </div>
+            <div class="menu-btn" onclick="myMenuFunction()" >
+                 <i id="hhfj" class="fa fa-bars menu-icon"></i>
+            </div>
+        </nav>
+        <main class="wrapper">
+           <section class="featured-box" id="home">
+              <div class="featured-text">
+                <div class="hello">
+                    <p>Hello I'm a</p>
+                </div>
+                <div class="featured-name">
+                    <span class="typedText" style="font-size: 40px;"></span>
+                </div>
+                <div class="text-info">
+                    <p>My name is Abdullahi! I'm a web developer with 6+ months of experience</p>
+                </div>
+                <div class="text-btn">
+                    <button class="btn hire-btn">Hire Me</button>
+                    <button class="btn">Download CV<i class="uil uil-file"></i></button>
+                </div>
+                <div class="socical_icons">
+                    <div class="icon_circle"></div>
+                    <div class="icon"><i class="uil uil-instagram"></i></div>
+                    <div class="icon"><i class="uil uil-facebook"></i></div>
+                    <div class="icon"><i class="uil uil-twitter"></i></div>
+                    <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                </div>
+              </div>
+              <div class="featured-image">
+                <div class="image">
+                    <img src="./ja.jpg" alt="">
+                </div>
+              </div>
+           </section>
+           <div class="skills-container">
+            <div class="skills-title" id="skills">Skills</div>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="./images/HTML-b6a63be6.svg" alt="HTML5" class="skill-logo">
+                    <div class="skill-name">HTML5</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/CSS-57adbf27.svg" alt="CSS3" class="skill-logo">
+                    <div class="skill-name">CSS3</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/JavaScript-e971dcc9.svg" alt="JavaScript" class="skill-logo">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/React-Dark-8e4b603f.svg" alt="React" class="skill-logo">
+                    <div class="skill-name">React.js</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/download.png" alt="Next.js" class="skill-logo">
+                    <div class="skill-name">Next.js</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/download (3).png" alt="Tailwind CSS" class="skill-logo">
+                    <div class="skill-name">Tailwind CSS</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/Git-6c8d66b9.svg" alt="Styled Components" class="skill-logo">
+                    <div class="skill-name">Git</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/Figma-Dark-5ce848dd.svg" alt="Figma" class="skill-logo">
+                    <div class="skill-name">Figma</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/download (1).png" alt="Redux" class="skill-logo">
+                    <div class="skill-name">Vercel</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+    
+                <div class="skill-card">
+                    <img src="./images/TypeScript-aa7cff0c.svg" alt="TypeScript" class="skill-logo">
+                    <div class="skill-name">TypeScript</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <img src="./images/Github-Dark-067b4355.svg" alt="TypeScript" class="skill-logo">
+                    <div class="skill-name">Github</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <section class="projects" id="project">
+        <h2 class="hheading">Featured <span>Projects</span></h2>
+        <div class="projects-container">
+            <!-- Weather App Project -->
+            <div class="project-box">
+                <div class="project-image">
+                    <img src="./Screenshot 2024-11-21 140128.png" alt="Weather App">
+                    <div class="project-overlay">
+                        <div class="tech-badges">
+                            <span class="react-badge"><i class="fab fa-react"></i></span>
+                            <span class="tailwind-badge"><i class="fab fa-css3"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>Weather Application</h3>
+                        <div class="project-type">React App</div>
+                    </div>
+                    <p>A modern weather dashboard built with React and styled with Tailwind CSS. Features real-time weather updates, responsive design, and dynamic theme switching based on weather conditions.</p>
+                    <div class="tech-stack">
+                        <span class="react">React.js</span>
+                        <span class="tailwind">Tailwind CSS</span>
+                        <span class="api">Weather API</span>
+                        <span class="tools">VSCode</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fas fa-code"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="live-demo">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Prince Trades Website -->
+            <div class="project-box">
+                <div class="project-image">
+                    <img src="./image.png" alt="Prince Trades">
+                    <div class="project-overlay">
+                        <div class="tech-badges">
+                            <span class="vite-badge"><i class="fas fa-bolt"></i></span>
+                            <span class="tailwind-badge"><i class="fab fa-css3"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>Prince Trades Platform</h3>
+                        <div class="project-type">Vite App</div>
+                    </div>
+                    <p>A lightning-fast trading platform built with Vite and Tailwind CSS. Features real-time market data, interactive charts, and a responsive trading interface optimized for performance.</p>
+                    <div class="tech-stack">
+                        <span class="vite">Vite</span>
+                        <span class="tailwind">Tailwind CSS</span>
+                        <span class="api">Trading API</span>
+                        <span class="tools">Git</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fas fa-code"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="live-demo">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- UITH Official Website -->
+            <div class="project-box">
+                <div class="project-image">
+                    <img src="./Screenshot 2024-11-21 134920.png" alt="UITH Website">
+                    <div class="project-overlay">
+                        <div class="tech-badges">
+                            <span class="html-badge"><i class="fab fa-html5"></i></span>
+                            <span class="css-badge"><i class="fab fa-css3"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>UITH Official Website</h3>
+                        <div class="project-type">Static Website</div>
+                    </div>
+                    <p>A clean and efficient institutional website built with modern HTML5 and CSS3. Features custom animations, responsive design, and optimized performance for healthcare information systems.</p>
+                    <div class="tech-stack">
+                        <span class="html">HTML5</span>
+                        <span class="css">CSS3</span>
+                        <span class="api">REST API</span>
+                        <span class="tools">Responsive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="github-link">
+                            <i class="fas fa-code"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="live-demo">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <p class="section-description">Let's Work Together</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="200">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>smithdon578@gmail.com</p>
+                        <a href="mailto:youremail@example.com" class="contact-button">
+                            Write me <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+    
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="400">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p>+234 902 194 2241</p>
+                        <a href="https://wa.me/1234567890" class="contact-button">
+                            Message me <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+    
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="600">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p>Your Name</p>
+                        <a href="https://linkedin.com/in/yourprofile" class="contact-button">
+                            Connect <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <form class="contact-form" data-aos="fade-left" data-aos-delay="400">
+                    <div class="input-box">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="input-box">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Me</h3>
+                    <p>I'm a frontend developer passionate about creating beautiful and functional web experiences. Let's work together to bring your ideas to life!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: your.email@example.com</p>
+                    <p>Location: Your City, Country</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
+    <script src="./index.js"></script>
+    <script>
+        
+       </script>
+       <script>
+        AOS.init({
+    duration: 800,
+    easing: 'ease',
+    once: true
+});
+    </script>
+    <script>
+        gsap.registerPlugin(TextPlugin);
+
+        const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        heroTimeline
+            .to(".hero-title", { opacity: 1, y: 0, duration: 1 })
+            .to(".hero-subtitle", { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+            .to(".cta-button", { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+            .to(".hero-image", { opacity: 1, x: 0, duration: 1 }, "-=0.5");
+
+        const roles = ["Frontend Developer", "UI Designer", "Web Creator"];
+        let currentRole = 0;
+
+        function typeText() {
+            gsap.to(".typed-text", {
+                duration: 1,
+                text: roles[currentRole],
+                ease: "none",
+                onComplete: () => {
+                    currentRole = (currentRole + 1) % roles.length;
+                    setTimeout(typeText, 2000);
+                }
+            });
+        }
+
+        typeText();
+
+        gsap.fromTo(
+            ".footer-section",
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 1, delay: 0.5, stagger: 0.3 }
+        );
+
+        gsap.to(".footer-bottom", { opacity: 1, y: 0, duration: 1, delay: 1 });
+    </script>
+</body>
+</html>

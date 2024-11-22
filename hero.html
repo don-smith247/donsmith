@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Next-Level Portfolio Hero</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6a11cb;
+            --secondary-color: #2575fc;
+            --accent-color: #ff6b6b;
+            --text-color: #ffffff;
+            --bg-dark: #0f0e17;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            cursor: none; /* Custom cursor */
+            overflow-x: hidden;
+        }
+
+        .hero-container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+        }
+
+        /* Advanced Background */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at center, 
+                    rgba(106, 17, 203, 0.1), 
+                    transparent 50%
+                ),
+                linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            filter: contrast(120%) brightness(80%);
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            mix-blend-mode: difference;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: 
+                width 0.2s ease, 
+                height 0.2s ease, 
+                background-color 0.3s ease;
+        }
+
+        .custom-cursor.expand {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255,107,107,0.2);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* Advanced Typography */
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(
+                45deg, 
+                var(--text-color), 
+                var(--accent-color)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            position: relative;
+            perspective: 500px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .hero-title.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .hero-subtitle.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Interactive Skills */
+        .skills-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .skills-grid.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            transform: perspective(500px) rotateX(15deg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item i {
+            font-size: 1.2rem;
+        }
+
+        .skill-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: scale(1.05) rotateX(0);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Animated CTA */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--text-color);
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .cta-button.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg, 
+                transparent, 
+                rgba(255,255,255,0.3), 
+                transparent
+            );
+            transition: all 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+        }
+
+        /* Particle Background */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="particles-container" id="particlesContainer"></div>
+    
+    <section class="hero-container">
+        <div class="hero-bg"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title" id="titleReveal">Innovative Developer</h1>
+            
+            <h2 class="hero-subtitle" id="subtitleReveal">
+                Crafting digital experiences that push the boundaries of web design
+            </h2>
+            
+            <div class="skills-grid" id="skillsGrid">
+                <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    Frontend
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-paint-brush"></i>
+                    UX Design
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-rocket"></i>
+                    Performance
+                </div>
+            </div>
+            
+            <a href="#portfolio" class="cta-button" id="ctaButton">
+                Explore My Work
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('customCursor');
+        const interactiveElements = document.querySelectorAll('.skill-item, .cta-button');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // Cursor Expand on Hover
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('expand');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('expand');
+            });
+        });
+
+        // Page Load Animations
+        window.addEventListener('load', () => {
+            const title = document.getElementById('titleReveal');
+            const subtitle = document.getElementById('subtitleReveal');
+            const skillsGrid = document.getElementById('skillsGrid');
+            const ctaButton = document.getElementById('ctaButton');
+
+            setTimeout(() => {
+                title.classList.add('reveal');
+            }, 300);
+
+            setTimeout(() => {
+                subtitle.classList.add('reveal');
+            }, 500);
+
+            setTimeout(() => {
+                skillsGrid.classList.add('reveal');
+            }, 700);
+
+            setTimeout(() => {
+                ctaButton.classList.add('reveal');
+            }, 900);
+
+            // Particle Background
+            createParticles();
+        });
+
+        // Background Interaction
+        document.addEventListener('mousemove', (e) => {
+            const heroBg = document.querySelector('.hero-bg');
+            const x = e.clientX / window.innerWidth * 100;
+            const y = e.clientY / window.innerHeight * 100;
+            
+            heroBg.style.backgroundImage = `
+                radial-gradient(
+                    circle at ${x}% ${y}%, 
+                    rgba(106, 17, 203, 0.1), 
+                    transparent 50%
+                ),
+                linear-gradient(135deg, var(--primary-color), var(--secondary-color))
+            `;
+        });
+
+        // Particle Background Generator
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size
+                const size = Math.random() * 5 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation
+                particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random movement path
+                particle.style.animation = `particleMove${i} linear infinite`;
+                
+                // Create keyframe animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes particleMove${i} {
+                        0% { 
+                            transform: translate(0, 0) rotate(0deg);
+                            opacity: 0.5;
+                        }
+                        50% { 
+                            transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(180deg);
+                            opacity: 0.7;
+                        }
+                        100% { 
+                            transform: translate(0, 0) rotate(360deg);
+                            opacity: 0.5;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                container.appendChild(particle);
+            }
+        }
+    </script>
+</body>
+</html>
